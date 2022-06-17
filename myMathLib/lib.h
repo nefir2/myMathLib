@@ -1,10 +1,11 @@
 #pragma once
-
+#pragma region #define
 #ifdef MYMATHLIB_EXPORTS
 #define MYMATHLIB_API __declspec(dllexport)
 #else
 #define MYMATHLIB_API __declspec(dllimport)
 #endif
+#pragma endregion
 #pragma region functions
 /// <summary>
 /// инициализация последовательности фибоначчи.
