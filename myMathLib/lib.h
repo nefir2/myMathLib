@@ -1,18 +1,18 @@
 #pragma once
 
-#ifdef MATHLIBRARY_EXPORTS
-#define MATHLIBRARY_API __declspec(dllexport)
+#ifdef MYMATHLIB_EXPORTS
+#define MYMATHLIB_API __declspec(dllexport)
 #else
-#define MATHLIBRARY_API __declspec(dllimport)
+#define MYMATHLIB_API __declspec(dllimport)
 #endif
-
+#pragma region functions
 /// <summary>
 /// инициализация последовательности фибоначчи.
 /// </summary>
 /// <param name="a">F(n - 2)</param>
 /// <param name="b">F(n - 1)</param>
 /// <returns></returns>
-extern "C" MATHLIBRARY_API void fibonacci_init(const unsigned long long a, const unsigned long long b);
+extern "C" MYMATHLIB_API void fibonacci_init(const unsigned long long a, const unsigned long long b);
 
 /// <summary>
 /// производит следующее значение последовательности.
@@ -21,13 +21,13 @@ extern "C" MATHLIBRARY_API void fibonacci_init(const unsigned long long a, const
 /// возвращает true при успешном обновлении настоящего значения и индекса;
 /// возвращает false при переполнении и не меняет значение и индекс.
 /// </returns>
-extern "C" MATHLIBRARY_API bool fibonacci_next();
+extern "C" MYMATHLIB_API bool fibonacci_next();
 
 /// <summary>
 /// возвращает нынешнее значение последовательности.
 /// </summary>
 /// <returns>настоящее значение последовательности.</returns>
-extern "C" MATHLIBRARY_API unsigned long long fibonacci_current();
+extern "C" MYMATHLIB_API unsigned long long fibonacci_current();
 
 /// <summary>
 /// возвращает позицию настоящего значения в последовательности.
@@ -35,4 +35,5 @@ extern "C" MATHLIBRARY_API unsigned long long fibonacci_current();
 /// <returns>
 /// настоящий индекс последовательности.
 /// </returns>
-extern "C" MATHLIBRARY_API unsigned fibonacci_index();
+extern "C" MYMATHLIB_API unsigned fibonacci_index();
+#pragma endregion
