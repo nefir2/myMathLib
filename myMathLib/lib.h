@@ -1,5 +1,5 @@
 #pragma once
-#pragma region #define
+#pragma region ifdef
 #ifdef MYMATHLIB_EXPORTS
 #define MYMATHLIB_API __declspec(dllexport)
 #else
@@ -14,7 +14,6 @@
 /// <param name="b">F(n - 1)</param>
 /// <returns></returns>
 extern "C" MYMATHLIB_API void fibonacci_init(const unsigned long long a, const unsigned long long b);
-
 /// <summary>
 /// производит следующее значение последовательности.
 /// </summary>
@@ -23,13 +22,11 @@ extern "C" MYMATHLIB_API void fibonacci_init(const unsigned long long a, const u
 /// возвращает false при переполнении и не меняет значение и индекс.
 /// </returns>
 extern "C" MYMATHLIB_API bool fibonacci_next();
-
 /// <summary>
 /// возвращает нынешнее значение последовательности.
 /// </summary>
 /// <returns>настоящее значение последовательности.</returns>
 extern "C" MYMATHLIB_API unsigned long long fibonacci_current();
-
 /// <summary>
 /// возвращает позицию настоящего значения в последовательности.
 /// </summary>
